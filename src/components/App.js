@@ -15,11 +15,7 @@ class App extends Component {
     loading: false,
     query: "",
     page: 1,
-    // endPage: 1,
-    // selected: null,
     isModalOpen: false,
-    BASE_URL: "https://pixabay.com/api",
-    API_KEY: "21693185-7bffd421bcba5faf5a7443ece",
   };
 
   componentDidUpdate(_, prevState) {
@@ -39,7 +35,9 @@ class App extends Component {
       this.setState({ isModalOpen: false });
   };
   handleSearchImage = async () => {
-    const { page, query, BASE_URL, API_KEY } = this.state;
+    const API_KEY = "21693185-7bffd421bcba5faf5a7443ece";
+    const BASE_URL = "https://pixabay.com/api"; ;
+    const { page, query } = this.state;
     this.setState({ loading: true, error: null });
     try {
       const { data } = await axios.get(
@@ -65,7 +63,6 @@ class App extends Component {
   showMore = () => {
     this.setState((prevState) => ({ page: prevState.page + 1 }));
   };
-  getSnapshotBeforeUpdate;
 
   render() {
     const { hits, loading, isModalOpen, modalImage } = this.state;

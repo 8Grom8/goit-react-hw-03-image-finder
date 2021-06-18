@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 const Button = ({ showMore }) => {
   return (
-      <button className={css.showMore} onClick={showMore}>
+      <button className={css.Button} onClick={showMore}>
         Show More
       </button>
       );

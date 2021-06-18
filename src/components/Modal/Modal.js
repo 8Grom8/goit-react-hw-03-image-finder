@@ -3,8 +3,7 @@ import css from "./Modal.module.css";
 import PropTypes from "prop-types";
 
 class Modal extends Component {
-  state = {};
-
+  
   componentDidMount() {
     window.addEventListener("keydown", this.props.closeModal);
   }
